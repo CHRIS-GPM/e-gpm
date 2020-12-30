@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>經濟加分作業</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .e-botton {
+    background-color: black;
+    justify-content: space-around;
+    padding: 10px 5px;
+  }
+
+  .e-botton>nav {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .e-botton>nav>a {
+    font-size: 24px;
+    font-family: sans-serif;
+    color: white;
+    text-decoration: none;
+  }
+
+  .r-p-item {
+    display: none;
+  }
+
+  .e-img {
+    width: 1000px;
+    height: 600px;
+    margin: 20px 250px;
+  }
+
+  h1 {
+    text-align: center;
+    margin: 20px;
+  }
+</style>
+
+<body>
+  <h1>經濟表單</h1>
+  <div class="e-root">
+    <div class="e-botton">
+      <nav>
+        <a href="#" onclick="clickhere(this)" value="grow">經濟成長率</a>
+        <a href="#" onclick="clickhere(this)" value="lose">失業率</a>
+        <a href="#" onclick="clickhere(this)" value="up">物價上漲率</a>
+      </nav>
+    </div>
+    <div>
+      <div id="grow" class="r-p-item">
+        <div>
+          <img src="img/grow.png" class="e-img">
+        </div>
+      </div>
+      <div id="lose" class="r-p-item">
+        <div>
+          <img src="img/lose.png" class="e-img">
+        </div>
+      </div>
+      <div id="up" class="r-p-item">
+        <div>
+          <img src="img/up.png" class="e-img">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var arraypro = ["grow", "lose", "up"]
+
+    function clickhere(x) {
+      arraypro.forEach(e => {
+        document.getElementById(e).style.display = "none";
+      });
+
+      var y = x.attributes.value.nodeValue;
+      document.getElementById(y).style.display = "block";
+    }
+  </script>
+</body>
+
+</html>
