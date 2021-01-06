@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>經濟加分作業</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .e-botton {
+    background-color: black;
+    justify-content: space-around;
+    padding: 10px 5px;
+  }
+
+  .e-botton>nav {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .e-botton>nav>a {
+    font-size: 24px;
+    font-family: sans-serif;
+    color: white;
+    text-decoration: none;
+  }
+
+  .r-p-item {
+    display: none;
+  }
+
+  .e-img {
+    width: 1000px;
+    height: 600px;
+    margin: 20px 250px;
+  }
+
+  h1 {
+    text-align: center;
+    margin: 20px;
+  }
+
+  p {
+    text-align: center;
+    margin: 10px 400px;
+    width: 600px;
+  }
+</style>
+
+<body>
+  <h1>經濟表單</h1>
+  <div class="e-root">
+    <div class="e-botton">
+      <nav>
+        <a href="#" onclick="clickhere(this)" value="grow">經濟成長率</a>
+        <a href="#" onclick="clickhere(this)" value="lose">失業率</a>
+        <a href="#" onclick="clickhere(this)" value="up">物價上漲率</a>
+      </nav>
+    </div>
+    <div>
+      <div id="grow" class="r-p-item">
+        <div>
+          <div>
+            <canvas id="myChart"></canvas>
+            <script>
+              var ctx = document.getElementById('myChart').getContext('2d');
+              var chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                  labels: ['1999', '2000', '2001', '2002', '2003', '2004',
+                    '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015',
+                    '2016',
+                    '2017',
+                    '2018', '2019'
+                  ],
+                  datasets: [{
+                    label: '經濟成長率',
+                    backgroundColor: 'rgb(255, 99, 132)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    data: [6.73, 6.31, -1.40, 5.48, 4.22, 6.95, 5.38, 5.77, 6.85, 0.80, -1.61, 10.25, 3.67,
+                      2.22,
+                      2.48,
+                      4.72, 1.47, 2.17, 3.31, 2.79, 2.96, 2.54
+                    ],
+                    fill: false,
+                  }]
+                },
+                options: {}
+              });
+            </script>
+          </div>
+          <p>
+            經濟成長率在2001年和2009年分別達到一個低谷。2001年由於美國911恐怖襲擊時間，美國之資訊科技產業景氣急速下滑，國際景氣向下沉淪拉力持續加大，進口美國資訊科技產品的地區經濟成長率均下滑。並且此時占全球總產值四分之三規模之美、日、歐等三大經
+            濟體皆陷入程度不一的成長衰退困境，所以2001年當年的經濟成長率較2000急速下降。
+          </p>
+          <p>
+            2007到2009，經濟成長率逐步遞減，是由於全球經濟受美國次級房貸及其後續效應衝擊，且台灣境內物價大幅上漲衝擊，財富縮水導致消費意願不振。但2009後逐漸有所緩解並在2010達到頂峰。 </p>
+          <p><a href="https://www.stat.gov.tw/np.asp?ctNode=492&mp=4"
+              target="block">資料出處：https://www.stat.gov.tw/np.asp?ctNode=492&mp=4</a>
+          </p>
+        </div>
+      </div>
+      <div id="lose" class="r-p-item">
+        <div>
+          <div>
+            <canvas id="myChart2"></canvas>
+            <script>
+              var ctx = document.getElementById('myChart2').getContext('2d');
+              var chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                  labels: ['1999', '2000', '2001', '2002', '2003', '2004',
+                    '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015',
+                    '2016',
+                    '2017',
+                    '2018', '2019'
+                  ],
+                  datasets: [{
+                    label: '失業率',
+                    backgroundColor: 'blue',
+                    borderColor: 'blue',
+                    data: [2.92, 2.99, 4.57, 5.17, 4.99, 4.44, 4.13, 3.91, 3.91, 4.14, 5.85, 5.21, 4.39, 4.24,
+                      4.18, 3.96, 3.78, 3.92, 3.76, 3.71, 3.73
+                    ],
+                    fill: false,
+                  }]
+                },
+                options: {}
+              });
+            </script>
+          </div>
+          <p>
+            失業率波動不是很劇烈，比較階段性成長或者降低，2000-2002失業率有一定程度的增加，隨後到2006年有所回落，但是隨後增長，在2009年達到頂峰。顯然，2001年和2009年的經濟不景氣也一定程度導致了2001年和2009年失業率增長，但2009年的失業率也是由於很多其他因素引起的，比如七月失業率增長，是由於大量應屆畢業生湧入市場，九月失業是由於季節性臨時工種的結束。所以我們看出，失業率不是由於單方面的原因，而是多方面作用的結果。
+            其實失業率階段性的浮動是很正常的，我們不必過分驚慌，因為隨著時代發展，新產業崛起，同時也會帶動著就業崗位的增加，市場就是這樣一個循環往復的景象。
+          </p>
+          <p><a href=" https://www.stat.gov.tw/np.asp?ctNode=514&mp=4"
+              target="block">資料出處：https://www.stat.gov.tw/np.asp?ctNode=514&mp=4</a>
+          </p>
+        </div>
+      </div>
+      <div id="up" class="r-p-item">
+        <div>
+          <div>
+            <canvas id="myChart3"></canvas>
+            <script>
+              var ctx = document.getElementById('myChart3').getContext('2d');
+              var chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                  labels: ['1999', '2000', '2001', '2002', '2003', '2004',
+                    '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015',
+                    '2016',
+                    '2017',
+                    '2018', '2019'
+                  ],
+                  datasets: [{
+                    label: '物價上漲率',
+                    backgroundColor: 'purple',
+                    borderColor: 'purple',
+                    data: [0.18, 1.26, -0.01, -0.20, -0.28, 1.61, 2.31, 0.60, 1.80, 3.52, -0.87, 0.97, 1.42,
+                      1.93, 0.79, 1.20, -0.30, 1.39, 0.62, 1.35, 0.56
+                    ],
+                    fill: false,
+                  }]
+                },
+                options: {}
+              });
+            </script>
+          </div>
+          <p>
+            物價波動是很正常的市場現狀，大量廠商湧入市場就會導致市場價格下降，隨後由於市場價格下降，很多廠商也會離開市場，市場價格也會慢慢回升。
+          </p>
+          <p>
+            但是2008年到2009年物價上漲率有一個大幅降落，根據經濟成長率和失業率表格，我們不難看出，由於2009年的經濟打擊，市場也出現了阻礙，財富縮水導致消費意願不振，於是物價整體呈現負增長，希望藉由低廉的價格吸引需求，來挽回自己的損失。隨後由於經濟慢慢好轉物價增長率也慢慢回升，在2010年呈現正增長。後續物價也多有波動，但影響沒有2009年那麼大，屬於正常範疇。
+          </p>
+          <p><a href=" https://www.stat.gov.tw/np.asp?ctNode=485&mp=4"
+              target="block">資料出處：https://www.stat.gov.tw/np.asp?ctNode=485&mp=4</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var arraypro = ["grow", "lose", "up"]
+
+    function clickhere(x) {
+      arraypro.forEach(e => {
+        document.getElementById(e).style.display = "none";
+      });
+
+      var y = x.attributes.value.nodeValue;
+      document.getElementById(y).style.display = "block";
+    }
+  </script>
+</body>
+
+</html>
